@@ -19,8 +19,6 @@ agendamentos de uma manicure.
 - Consulta de agendamentos
 - Exclusão de agendamentos
 
-## Interface do sistema
-(Adicionar imagens das telas)
 
 ## Acesso ao projeto
 https://sistema-agendamento-keila.netlify.app/
