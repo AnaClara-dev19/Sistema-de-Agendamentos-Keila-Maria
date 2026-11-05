@@ -1,0 +1,684 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #fdeac3;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+/* Coluna central com a largura da tela do protótipo (440px) */
+.pagina {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 123px 25px 80px;
+}
+
+/* Título (304px de largura para quebrar em 3 linhas, como no Figma) */
+.titulo {
+  width: 304px;
+  max-width: 100%;
+  margin: 0 auto 57px;
+}
+
+.titulo h1 {
+  margin: 0;
+  font-family: 'Aboreto', serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: #000;
+}
+
+/* Card claro */
+.card {
+  background-color: #fffff5;
+  border-radius: 30px;
+  min-height: 542px;
+  padding: 68px 45px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bem-vindo {
+  margin: 0 0 83px;
+  font-weight: 400;
+  font-size: 36px;
+  color: #8e4d0b;
+}
+
+.chave {
+  margin: 0 0 28px;
+  font-size: 16px;
+  color: #000;
+}
+
+/* Campo da chave de acesso */
+#chave {
+  width: 100%;
+  max-width: 299px;
+  height: 58px;
+  margin-bottom: 92px;
+  padding: 0 16px;
+  background-color: #ffe9b9;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #744311;
+  text-align: center;
+}
+
+#chave::placeholder {
+  font-size: 12px;
+  color: #868282;
+}
+
+#chave:focus {
+  outline: none;
+  border-color: #8e4d0b;
+}
+
+/* Botão Entrar */
+.botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 299px;
+  height: 58px;
+  background-color: #fed57c;
+  border-radius: 20px;
+  color: #744311;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+}
+
+.botao:hover {
+  background-color: #fdc95a;
+}
+
+.botao-buscar {
+  text-align: right;
+  background-color: #fdc95a;
+  width: 220px;
+}
+
+.botao-horario {
+  background-color: #ffe9b9;
+  border-radius: 0px;
+  color: black;
+}
+
+.botao-home {
+  text-align: left;
+  background-color: #fdc95a;
+  width: 220px;
+}
+
+.Data {
+  align-self: flex-start;
+  margin: 0 0 20px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Data-buscar {
+  text-align: center;
+  font-size: 25px;
+  margin: 0 0 15px;
+  font-family: 'Inter', sans-serif;
+}
+
+
+/* =====================================================
+   Ajustes só da página de consulta
+   (valem só com <body class="consulta">, então não
+   mudam o login nem a home). Medidas do Figma.
+   ===================================================== */
+
+/* título e card começam mais acima que no login */
+.consulta .pagina {
+  padding-top: 96px;
+}
+
+.consulta .titulo {
+  margin-bottom: 36px;
+}
+
+.consulta .card {
+  min-height: 617px;
+  padding-top: 67px;
+}
+
+/* "Data:" alinhado a 13px da borda do campo */
+.consulta .Data {
+  margin: 0 0 13px 13px;
+}
+
+/* campo "Selecione a data" (reaproveita o #chave) */
+.consulta #chave {
+  margin-bottom: 34px;
+}
+
+.consulta #chave::placeholder {
+  font-size: 14px;
+}
+
+/* imagem do calendário */
+.consulta .calendario {
+  width: 214px;
+  height: 265px;
+  margin-bottom: 53px;
+}
+
+/* Home e Buscar lado a lado, um em cada ponta do card */
+.consulta .botoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% + 58px);
+}
+
+.consulta .botoes .botao {
+  width: 144.66px;
+  height: 50px;
+  background-color: #fed57c;
+  font-size: 20px;
+}
+
+.consulta .botoes .botao:hover {
+  background-color: #fdc95a;
+}
+
+
+/* =====================================================
+   Ajustes só da página de agendamento
+   (valem só com <body class="agendamento">, então não
+   mudam as outras páginas). Medidas do Figma.
+   ===================================================== */
+
+/* título e card começam mais acima que no login */
+.agendamento .pagina {
+  padding-top: 96px;
+}
+
+.agendamento .titulo {
+  margin-bottom: 36px;
+}
+
+.agendamento .card {
+  min-height: 617px;
+  padding: 45px 34px 24px;
+}
+
+/* rótulos "Nome do cliente:" e "Data e Hora:" */
+.agendamento .rotulo {
+  align-self: flex-start;
+  margin: 0 0 25px 9px;
+  font-size: 20px;
+  line-height: normal;
+  color: #000;
+}
+
+/* o rótulo que vem depois do campo de nome fica mais perto do seu campo */
+.agendamento .campo-nome + .rotulo {
+  margin-bottom: 17px;
+}
+
+/* campo do nome */
+.agendamento .campo-nome {
+  align-self: flex-start;
+  width: 276.61px;
+  height: 39.45px;
+  margin-bottom: 25px;
+  padding: 0 16px;
+  background-color: #ffe9b9;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #744311;
+  text-align: center;
+}
+
+.agendamento .campo-nome::placeholder {
+  font-size: 14px;
+  color: #868282;
+}
+
+.agendamento .campo-nome:focus {
+  outline: none;
+  border-color: #8e4d0b;
+}
+
+/* caixa com data, hora e o ícone do calendário */
+.agendamento .campo-data-hora {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  width: 299px;
+  height: 58px;
+  margin-bottom: 15px;
+  padding-left: 12px;
+  background-color: #ffe9b9;
+  border-radius: 20px;
+}
+
+.agendamento .campo-data-hora:focus-within {
+  outline: 2px solid #8e4d0b;
+}
+
+.agendamento .campo-data-hora input {
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #744311;
+}
+
+.agendamento .campo-data-hora input::placeholder {
+  color: #744311;
+}
+
+.agendamento .campo-data {
+  width: 94px;
+}
+
+.agendamento .campo-hora {
+  width: 40px;
+  margin-left: 32px;
+}
+
+.agendamento .icone-calendario {
+  width: 41px;
+  height: 41px;
+  margin-left: auto;
+  margin-right: 42px;
+}
+
+/* Cancelar e Salvar lado a lado */
+
+/* Botões da página de agendamento */
+.agendamento .botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.agendamento .botoes .botao {
+    width: 144.66px;
+    max-width: 100%;
+    height: 58px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.agendamento .botoes .botao:hover {
+    filter: brightness(0.95);
+}
+
+.agendamento .botao-salvar {
+    background-color: #f6dc45;
+}
+
+.agendamento .botoes .botao-home {
+    background-color: #fed57c;
+}
+/* corrigindo os icones de calendario e horario*/
+.agendamento .campo-data {
+    width: 94px;
+}
+
+.agendamento .campo-hora {
+    width: 40px;
+    margin-left: 32px;
+}
+
+.agendamento .icone-calendario {
+    width: 41px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: 42px;
+}
+
+/* =====================================================
+   Ajustes só da página home
+   (valem só com <body class="home">, então não mudam
+   as outras páginas). Medidas do Figma (frame 440x956).
+   ===================================================== */
+
+/* título começa em y=96 e o card em y=243 (96 + 111 + 36) */
+.home .pagina {
+  padding-top: 96px;
+}
+
+.home .titulo {
+  margin-bottom: 36px;
+}
+
+/* card 390x617; o texto começa 75px abaixo do topo do card */
+.home .card {
+  min-height: 617px;
+  padding: 75px 45px 40px;
+}
+
+/* "Consultar Agendamentos": 299x97, 70px de espaço até o próximo botão */
+.home .botao-grande {
+  height: 97px;
+  margin-bottom: 70px;
+}
+
+/* "Novo Agendamento": 299x58 */
+.home .botao-pequeno {
+  height: 58px;
+}
+
+/* "O que vamos fazer hoje?" (24px, marrom) */
+.card .pergunta {
+  margin: 0 0 96px;
+  font-size: 24px;
+  color: #8e4d0b;
+  
+}
+
+/*parte da Ana*/
+
+
+.item-agendamento {
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #d5e2d5;
+    text-align: left;
+}
+
+.item-agendamento p {
+    margin: 8px 0;
+}
+
+.botao-excluir {
+    margin-top: 8px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #a94442;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.botao-excluir:hover {
+    background-color: #873735;
+}
+
+.botao-excluir:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.botao-excluir:focus-visible {
+    outline: 3px solid #597c59;
+    outline-offset: 3px;
+}
+
+#listaAgendamentos {
+    margin-top: 18px;
+}
+
+
+
+/* Ajustes da tela de login */
+body:not(.consulta):not(.agendamento):not(.home) #email,
+body:not(.consulta):not(.agendamento):not(.home) #senha {
+    display: block;
+    width: 100%;
+    max-width: 299px;
+    height: 48px;
+    margin: 0 0 14px;
+    padding: 0 16px;
+    background-color: #ffe9b9;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #744311;
+    text-align: center;
+}
+
+body:not(.consulta):not(.agendamento):not(.home) #email:focus,
+body:not(.consulta):not(.agendamento):not(.home) #senha:focus {
+    outline: none;
+    border-color: #8e4d0b;
+}
+
+/* Botão de login */
+body:not(.consulta):not(.agendamento):not(.home) #formLogin button {
+    width: 100%;
+    max-width: 299px;
+    height: 58px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fed57c;
+    color: #744311;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+body:not(.consulta):not(.agendamento):not(.home) #formLogin button:hover {
+    background-color: #fdc95a;
+}
+
+
+/* Ajuste final dos botões de agendamento */
+
+.agendamento .botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.agendamento .botoes .botao {
+    display: flex;
+    flex: 0 0 144px;
+    width: 144px;
+    max-width: 144px;
+    height: 58px;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.agendamento .botao-salvar {
+    background-color: #f6dc45;
+}
+
+.agendamento .botao-home {
+    background-color: #fed57c;
+}
+
+.agendamento .botoes .botao-salvar {
+    background-color: #f6dc45;
+}
+
+.agendamento .botoes .botao-home {
+    background-color: #fed57c;
+}
+
+
+/* Campos de data e horário */
+.agendamento .campo-data-hora {
+    width: 100%;
+    max-width: 299px;
+    padding: 0 12px;
+    overflow: hidden;
+}
+
+.agendamento .campo-data-hora input[type="date"],
+.agendamento .campo-data-hora input[type="time"] {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #744311;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+.agendamento .campo-data-hora input[type="date"]::-webkit-calendar-picker-indicator,
+.agendamento .campo-data-hora input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+/*cnfigurações de buscar/consultar agendamento*/
+.consulta .rotulo {
+    margin-bottom: 12px;
+}
+
+.consulta .campo-data-hora {
+    margin-bottom: 25px;
+}
+
+.consulta input[type="date"] {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 299px;
+    height: 48px;
+    padding: 0 12px;
+    background-color: #ffe9b9;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    color: #744311;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.consulta .botao-home {
+    background-color: #fed57c;
+    color: #744311;
+}
+
+/* Botões da página de consulta */
+.consulta form .botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 28px;
+}
+
+.consulta .botoes .botao-home-consultar {
+    background-color: #fed57c;
+    color: #744311;
+}
+
+.consulta label.Data {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.consulta input.campo-data {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botão Buscar da página de consulta */
+.consulta .botoes .botao-buscar {
+    background-color: #cdf578;
+    color: #744311;
+}
+
+/* Cor ao passar o mouse */
+.consulta .botoes .botao-buscar:hover {
+    background-color: #b8e65e;
+}
+
+.consulta .botoes .botao-buscar {
+    background-color: #cdf578;
+    color: #744311;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Espaçamento dos botões da página de busca */
+.botoes {
+    gap: 12px;
+}
+
+#listaAgendamentos {
+    margin-bottom: 20px;
+}
+
+
+/* Campo de seleção de horário */
+#hora.campo-hora {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+
+    background-color: #fffaf0;
+    color: #4b4033;
+
+    border: 2px solid #f3d9a4;
+    border-radius: 14px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Quando clicar no campo */
+#hora.campo-hora:focus {
+    border-color: #d9ad55;
+    box-shadow: 0 0 0 3px rgba(217, 173, 85, 0.2);
+}
+
+/* Opção inicial */
+#hora.campo-hora:invalid {
+    color: #796c5b;
+}

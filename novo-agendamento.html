@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Keila Maria Unhas - Agendamento</title>
+</head>
+
+<body class="agendamento">
+
+    <div class="pagina">
+
+        <div class="titulo">
+            <h1>Keila Maria Unhas</h1>
+            <h1>oficial</h1>
+        </div>
+
+
+        <div class="card">
+            <p class="rotulo">Nome do cliente:</p>
+            <input type="text" id="nomeCliente" class="campo-nome" placeholder="Digite o nome da cliente" required>
+
+
+
+            <p class="rotulo">Serviço:</p>
+            <select id="servico" class="campo-nome" required>
+                <option value="">Selecione um serviço</option>
+            </select>
+
+            <p class="rotulo">Modalidade:</p>
+            <select id="modalidade" class="campo-nome" required disabled>
+                <option value="">Selecione primeiro um serviço</option>
+            </select>
+
+            <p id="precoServico"></p>
+
+
+
+            <p class="rotulo">Data:</p>
+            <div class="campo-data-hora">
+                <input type="date" id="data" class="campo-data" required>
+            </div>
+
+            <p class="rotulo">Hora:</p>
+            <div class="campo-data-hora">
+                <select id="hora" class="campo-hora" required>
+                    <option value="">Selecione um horário</option>
+                </select>
+            </div>
+
+
+
+
+
+            <div class="botoes">
+                <button type="button" id="salvarAgendamento" class="botao botao-salvar">
+                    Salvar
+                </button>
+
+                <a href="menu.html" class="botao botao-home">Home</a>
+            </div>
+
+
+
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="app.js"></script>
+
+
+</body>
+
+</html>
